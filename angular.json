@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Random-Card"
+    }
+  },
+  "defaultProject": "Random-Card",
+  "cli": {
+    "analytics": false
+  }
 }

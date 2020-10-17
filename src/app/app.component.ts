@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { UserService } from "./services/user.service";
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Random-Card';
+
+  user: any;
+
+  constructor(
+    private userService: UserService,
+    private toastr: ToastrService) {
+
+  }
+
+  ngOnInit() {
+    this.userService.getUser().subscribe(
+      (user: any) => {
+        console.log(user);
+        this.user = user.results[0];
+      },
+      (err) => {
+        this.toastr.error(err.status, "Oops");
+      }
+
+    )
+  }
 }
