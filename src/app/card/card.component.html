@@ -8,11 +8,11 @@
       alt=""
     />
     <div class="card-title text-primary">
-      <h1>
+      <h3>
         <span class="px-2">{{ user.name?.title }}.</span>
         <span class="px-2">{{ user.name?.first }}</span>
         <span class="px-2">{{ user.name?.last }}</span>
-      </h1>
+      </h3>
     </div>
     <div class="card-text">
       <fa-icon [icon]="faEnvelope"></fa-icon>
@@ -29,12 +29,18 @@
       <fa-icon [icon]="faPhone"></fa-icon>
       {{ user.phone }}
     </div>
-    <h6>
-      &nbsp;
-      <div height="50" class="card-text">
-        <fa-icon [icon]="faDatabase"></fa-icon>
-        Registered on {{ user.registered?.date | date }}
-      </div>
-    </h6>
+
+    &nbsp;
+
+    <div class="card-text h6 small">
+      <fa-icon [icon]="faDatabase"></fa-icon>
+      Registered on {{ user.registered?.date | date }}
+    </div>
+    <div class="card-text">
+      <button class="btn btn-primary" onclick="window.location.reload()">
+        <fa-icon [icon]="faSyncAlt"> </fa-icon>
+        Refresh Page
+      </button>
+    </div>
   </div>
 </div>

@@ -4,7 +4,8 @@ import {
   faEnvelope,
   faMapMarkedAlt,
   faPhone,
-  faDatabase
+  faDatabase,
+  faSyncAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -21,7 +22,7 @@ export class CardComponent implements OnInit {
   faMapMarkedAlt = faMapMarkedAlt;
   faPhone = faPhone;
   faDatabase = faDatabase;
-
+  faSyncAlt = faSyncAlt;
   constructor() { }
 
   ngOnInit(): void {
